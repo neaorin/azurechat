@@ -87,8 +87,8 @@ async function executeFunction(props: {
 
     // we need to add the user id to the headers as this is expected by the function and does not have context of the user
     headerItems.push({
-      id: "authorization",
-      key: "authorization",
+      id: "user-id",
+      key: "user-id",
       value: await userHashedId(),
     });
     // map the headers to a dictionary

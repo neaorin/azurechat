@@ -10,7 +10,7 @@ export const SearchAzureAISimilarDocuments = async (req: Request) => {
     const apiKey = req.headers.get("apiKey") as string;
     const searchName = req.headers.get("searchName") as string;
     const indexName = req.headers.get("indexName") as string;
-    const userId = req.headers.get("authorization") as string;
+    const userId = req.headers.get("user-id") as string;
 
     const result = await ExtensionSimilaritySearch({
       apiKey,
