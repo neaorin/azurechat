@@ -34,6 +34,8 @@ export const ChatApiExtensions = async (props: {
         },
       ],
       tools: extensions,
+      temperature: Number(process.env.AZURE_OPENAI_API_TEMPERATURE) || 0,
+      max_tokens: Number(process.env.AZURE_OPENAI_API_MAX_TOKENS) || 1000
     },
     { signal: signal }
   );
