@@ -33,6 +33,17 @@ export const ChatPage: FC<ChatPageProps> = (props) => {
       messages: props.messages,
       userName: session?.user?.name!,
     });
+
+    const enableExtensions = async () => {
+      const myExtensionId = process.env.NEXT_PUBLIC_TEST_AUTO_ENABLE_EXTENSION_ID;
+      console.log("auto-enable extension id: " + myExtensionId);
+
+      if (myExtensionId && !chatStore.chatThread?.extension?.includes(myExtensionId)) 
+        await chatStore.AddExtensionToChatThread(myExtensionId);
+   }
+ 
+   enableExtensions();
+
   }, [props.messages, session?.user?.name, props.chatThread]);
 
   const { messages, loading } = useChat();

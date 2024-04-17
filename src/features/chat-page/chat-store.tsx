@@ -36,7 +36,7 @@ class ChatState {
   public userName: string = "";
   public chatThreadId: string = "";
 
-  private chatThread: ChatThreadModel | undefined;
+  public chatThread: ChatThreadModel | undefined;
 
   private addToMessages(message: ChatMessageModel) {
     const currentMessage = this.messages.find((el) => el.id === message.id);
